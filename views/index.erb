@@ -2,21 +2,50 @@
   <head>
   <style>
     body {
-      background: beige;
+      background-color: beige;
+    }
+
+    .message_color--correct {
+      background-color: #33cc33;
+    }
+
+    .message_color--warm {
+      background-color: #ff9933;
+    }
+
+    .message_color--cold {
+      background-color: #ff0000;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    form {
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
     }
   </style>
   </head>
   <body>
-    <p>
-      Guess the SECRET NUMBER!
-    </p>
+
+    <div class="title">
+      <h1>
+        Guess the SECRET NUMBER!
+      </h1>
+    </div>
 
     <form>
       <input type='text' name='guess' />
       <input type='submit' value='Guess!' />
-  </form>
-  <p>
-    <%= message %>
-  </p>
+    </form>
+
+    <p class="message_color <%= colored_message %>">
+      <%= message %>
+    </p>
+
   </body>
 </html>
