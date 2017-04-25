@@ -10,7 +10,10 @@ get '/' do
 end
 
 def check_guess(guess)
-  if guess > $number
+  if guess == "".to_i
+    ""
+
+  elsif guess > $number
     if guess > $number + 5
       "Way too high!"
     else
@@ -25,7 +28,7 @@ def check_guess(guess)
     end
 
   elsif guess == $number
-    "Correct!"
+    "Correct! The SECRET NUMBER is " + $number.to_s + "."
   end
 
 end
